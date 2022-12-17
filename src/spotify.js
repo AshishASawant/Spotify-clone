@@ -1,6 +1,6 @@
 import axios from 'axios'
 const client_id = '693285c4d29b4fc99480403f400d2179'; // Your client id
-const redirect_uri = 'http://localhost:3000'; // Your redirect uri
+const redirect_uri = 'https://spotifyclonewebonly.netlify.app'; // Your redirect uri
 const authEndpoint='https://accounts.spotify.com/authorize?'
 const scopes=['user-library-read','playlist-read-private']
 
