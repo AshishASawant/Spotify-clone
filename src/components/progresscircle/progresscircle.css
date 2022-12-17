@@ -1,0 +1,31 @@
+circle {
+    transition: all 1s linear;
+    transform: rotate(93deg);
+    transform-origin: 50% 50%;
+  }
+  
+  image.active {
+    animation-play-state: running;
+    animation: rotation 30s infinite linear;
+    transform-origin: 50% 50%;
+  }
+  image.inactive {
+    animation: rotation 30s infinite linear;
+    transform-origin: 50% 50%;
+    animation-play-state:paused;
+  }
+  
+  .progress-circle {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  

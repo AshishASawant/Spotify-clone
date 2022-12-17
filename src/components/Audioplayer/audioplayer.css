@@ -1,0 +1,50 @@
+.audio-player-container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.audio-player-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37%;
+    height: 100%;
+}
+.audio-player-right{
+    width: 63%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.audio-title{
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    color: #C4d0e3;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.audio-subtitle{
+    color:#9aa9c2;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0%;
+}
+.audio-duration{
+    display: flex;
+    flex-direction: row;
+    color: #C4d0e3;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    font-size: 18px;
+    font-weight: 600;
+}

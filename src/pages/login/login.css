@@ -1,0 +1,24 @@
+.login-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+}
+.login-container img{
+    height: 12rem;
+    width: 40rem;
+    margin-bottom: 5rem;
+}
+.btn{
+    height: 5rem;
+    width: 15rem;
+    background-color: rgb(40, 212, 40);
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: large;
+}
