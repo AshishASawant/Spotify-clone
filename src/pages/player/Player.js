@@ -20,10 +20,12 @@ const Player = () => {
       setCurrentTrack(data.items[0].track)
       setCurrentIndex(0)
   });
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.state]);
 
   useEffect(() => {
    setCurrentTrack(tracks[currentIndex]?.track)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
   currentTrack?.album?.artists?.forEach(item=>{

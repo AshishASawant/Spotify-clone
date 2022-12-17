@@ -22,6 +22,7 @@ const Musicstate = (props) => {
         audio.pause()
        }
        console.log('track')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
      }, [tracks])
     
     
@@ -35,6 +36,7 @@ const Musicstate = (props) => {
         audio.pause()
       }
       console.log('current',isPlaying)
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentIndex])  
   
     //this useeffect play/pauses the music
@@ -46,10 +48,12 @@ const Musicstate = (props) => {
       audio.pause()
      }
      console.log(isPlaying)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isPlaying])
     
    useEffect(() => {
       console.log('useefect')
+       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
    
     
