@@ -1,4 +1,4 @@
-import React, { useRef, useState,useEffect, useContext } from "react";
+import React, {  useContext } from "react";
 import "./audioplayer.css";
 import Progresscircle from "../progresscircle/Progresscircle";
 import Controls from "../controls/Controls";
@@ -6,9 +6,9 @@ import Waveanimation from "../waveanimation/Waveanimation";
 import musicContext from "../../state/musicContext";
 
 const AudioPlayer = (props) => {
-  let {tracks,setCurrentIndex,currentIndex}=props
+
   const context=useContext(musicContext)
-  const{audio,isPlaying,setIsPlaying,currentPercentage,trackProgress,handleNext,handlePrev}=context
+  const{isPlaying,setIsPlaying,currentPercentage,trackProgress,handleNext,handlePrev}=context
   // const {duration}=audio
   // const [trackProgress, setTrackProgress] = useState(0);
 
