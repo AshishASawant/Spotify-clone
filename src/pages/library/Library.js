@@ -14,6 +14,7 @@ const Library = () => {
    apiClient.get('me/playlists').then(({data})=>{
     setPlayList(data.items)
    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const openPlaylist=(id)=>{
