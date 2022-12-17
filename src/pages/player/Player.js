@@ -9,7 +9,7 @@ import Widget from "../../components/widget.js/Widget";
 
 const Player = () => {
   const context = useContext(musicContext);
-  const {tracks, setTracks,currentTrack, setCurrentTrack,currentIndex, setCurrentIndex,isPlaying,setIsPlaying,audio}=context
+  const {tracks, setTracks,currentTrack, setCurrentTrack,currentIndex, setCurrentIndex}=context
   const location = useLocation();
   const artist=[]
   useEffect(() => {

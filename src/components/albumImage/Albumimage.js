@@ -4,9 +4,9 @@ import './albumimage.css'
 const Albumimage = ({url}) => {
   return (
     <div className='album-image'>
-      <img src={url} alt="Album image" />
+      <img src={url} alt="Album " />
       <div className="glass-morphism">
-      <img src={url} alt="Album image" />
+      <img src={url} alt="Album " />
       </div>
     </div>
   )
