@@ -118,7 +118,7 @@ const Musicstate = (props) => {
         setLib,
         categories,
         setcategories,
-        loading,setLoading,genre
+        loading,setLoading
       }}
     >
       {props.children}
