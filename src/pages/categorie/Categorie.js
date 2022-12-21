@@ -12,7 +12,7 @@ const Categorie = () => {
   const navigate=useNavigate()
   const newCategorie=(id)=>{
     setLib(id)
-  navigate('/trending')
+    navigate('/playlist')
 }
     
 
