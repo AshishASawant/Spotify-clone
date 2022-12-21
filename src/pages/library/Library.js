@@ -1,18 +1,22 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import apiClient from '../../spotify'
 import './library.css'
-import {BsFillPlayCircleFill} from 'react-icons/bs'
 import {  useNavigate } from 'react-router-dom'
 import musicContext from '../../state/musicContext'
+import Displaycard from '../../components/displaycard/Displaycard'
+import Loading from '../../components/loading/Loading'
 
 
 const Library = () => {
   const context = useContext(musicContext)
   const {playList,setPlayList}=context
+  const [loading, setLoading] = useState(false)
   const navigate= useNavigate()
   useEffect(() => {
+    setLoading(true)
    apiClient.get('me/playlists').then(({data})=>{
     setPlayList(data.items)
+    setLoading(false)
    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -24,19 +28,13 @@ const Library = () => {
   
   return (
     <div className='mainscreen'>
+      {loading?<Loading/>:
       <div className="playlist-container">
         {playList.map((item)=>{
-         return (<div className="playlist-card" key={item.id} >
-          <img src={item.images[0]?.url } alt="Artist" className='playlist-img' />
-          <p className='playlist-title'>{item.name}</p>
-          <p className='playlist-subtitle'>{item.tracks.total}</p>
-          <div className="play-logo">
-          <BsFillPlayCircleFill size={50} style={{color:'green',cursor:'pointer'}} onClick={()=>{openPlaylist(item.id)}}/>
-          </div>
-         </div>
-        )
+         return (<Displaycard id={item.id} img={item?.images[0]?.url} title={item.name} subtitle={item.tracks?.total} click={()=>openPlaylist(item.id)} / >)
+         
         })}
-      </div>
+      </div>}
     </div>
   )
 }

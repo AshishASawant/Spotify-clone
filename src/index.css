@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -34,6 +36,7 @@ code {
   width: 100%;
   height: 100%;
   border-radius: 3rem;
+  overflow: hidden;
   background-color: #1e2a3e;
   background-image: repeating-radial-gradient(
       circle at center left,
@@ -43,4 +46,7 @@ code {
 }
 .playlist-container::-webkit-scrollbar { 
   display: none;  
+}
+*{
+font-family: 'Nunito', sans-serif;
 }

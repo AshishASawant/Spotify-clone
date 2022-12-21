@@ -7,9 +7,9 @@ import Musicstate from "./state/Musicstate";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <BrowserRouter>
   <Musicstate>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </Musicstate>
+    </BrowserRouter>
 );

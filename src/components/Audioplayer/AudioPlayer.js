@@ -6,7 +6,7 @@ import Waveanimation from "../waveanimation/Waveanimation";
 import musicContext from "../../state/musicContext";
 
 const AudioPlayer = (props) => {
-
+  
   const context=useContext(musicContext)
   const{isPlaying,setIsPlaying,currentPercentage,trackProgress,handleNext,handlePrev}=context
   // const {duration}=audio
@@ -83,9 +83,12 @@ const AudioPlayer = (props) => {
 
 
   const artist = [];
-  props.currentTrack?.album?.artists?.forEach((item) => {
+  // console.log(props.currentTrack)
+  if(props.currentTrack?.album){props.currentTrack?.album?.artists?.forEach((item) => {
     artist.push(item.name);
-  });
+  })}else{props.currentTrack?.artists?.forEach((item) => {
+    artist.push(item.name);
+  })}
   return (
     <div className="audio-player-container">
       <div className="audio-player-left">
@@ -98,7 +101,7 @@ const AudioPlayer = (props) => {
         />
       </div>
       <div className="audio-player-right">
-        <p className="audio-title">{props.currentTrack?.album?.name}</p>
+        <p className="audio-title">{props.currentTrack?.name}</p>
         <p className="audio-subtitle">{artist.join(" | ")}</p>
         <div className="audio-duration">
           <p className="audio-progress">0:{addZero(Math.round(trackProgress))}</p>

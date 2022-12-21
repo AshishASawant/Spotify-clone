@@ -1,6 +1,7 @@
 .wave-container{
     height: 40px;
     display: flex;
+    margin: auto 5px;
     flex-direction: row;
     justify-content: space-between;
     --box-size:4px;

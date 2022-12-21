@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
+import React, {  useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
-import { MdDashboard, MdFavorite, MdLibraryMusic } from "react-icons/md";
-import { RiFireFill } from "react-icons/ri";
-import { FaPlay } from "react-icons/fa";
+import { MdDashboard, MdLibraryMusic } from "react-icons/md";
+import { RiPlayList2Fill } from "react-icons/ri";
+import { FaPlay,FaSearch } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import apiClient from "../../spotify";
+
+
 const Sidebar = () => {
   const location = useLocation();
   useEffect(() => {
-    apiClient.get("me").then(({ data }) => 
-    {
-    console.log(data)
-    if(data.images.length){
-        document.querySelector(".user-image").style.backgroundImage=`url(${data.images[0].url})`
-    }
+    apiClient.get("me").then(({ data }) => {
+      if (data.images.length) {
+        document.querySelector(
+          ".user-image"
+        ).style.backgroundImage = `url(${data.images[0].url})`;
+      }
     });
   }, []);
 
@@ -24,22 +26,22 @@ const Sidebar = () => {
       <div className="nav-btns">
         <div
           className={`btn-body ${
-            location.pathname === "/feed" ? "active" : ""
+            location.pathname === "/categorie" ? "active" : ""
           }`}
         >
-          <Link to="/feed">
+          <Link to="/categorie">
             <MdDashboard size={28} />
-            <p className="btn-text">Feed</p>
+            <p className="btn-text">Categories</p>
           </Link>
         </div>
         <div
           className={`btn-body ${
-            location.pathname === "/trending" ? "active" : ""
+            location.pathname === "/playlist" ? "active" : ""
           }`}
         >
-          <Link to="/trending">
-            <RiFireFill size={28} />
-            <p className="btn-text">Trending</p>
+          <Link to="/playlist">
+            <RiPlayList2Fill size={28} />
+            <p className="btn-text">Playlist</p>
           </Link>
         </div>
         <div
@@ -54,12 +56,12 @@ const Sidebar = () => {
         </div>
         <div
           className={`btn-body ${
-            location.pathname === "/favourite" ? "active" : ""
+            location.pathname === "/search" ? "active" : ""
           }`}
         >
-          <Link to="/favourite">
-            <MdFavorite size={28} />
-            <p className="btn-text">Favourite</p>
+          <Link to="/search">
+            <FaSearch size={28} />
+            <p className="btn-text">Search</p>
           </Link>
         </div>
         <div
@@ -78,7 +80,13 @@ const Sidebar = () => {
           location.pathname === "/signout" ? "active" : ""
         }`}
       >
-        <Link to="/signout">
+        <Link
+          to="/login"
+          onClick={() => {
+            localStorage.removeItem("token");
+            location.reload()
+          }}
+        >
           <FiLogOut size={28} />
           <p className="btn-text">Signout</p>
         </Link>
