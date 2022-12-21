@@ -29,6 +29,7 @@ const Player = () => {
         setTracks(data.items);
       })
     setLoading(false);
+     // eslint-disable-next-line
   }, [location.state]);
 
   useEffect(() => {
