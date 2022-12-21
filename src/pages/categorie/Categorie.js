@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useState } from 'react'
+import React, { useContext } from 'react'
 import './categorie.css'
 import { useNavigate } from 'react-router-dom'
 import musicContext from '../../state/musicContext'

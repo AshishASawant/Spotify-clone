@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import apiClient from "../spotify";
 import musicContext from "./musicContext";
 
@@ -16,7 +16,6 @@ const Musicstate = (props) => {
   const { duration } = audio;
   const [trackProgress, setTrackProgress] = useState(0);
   const [categories, setcategories] = useState([]);
-  const [genre, setGenre] = useState([])
 
   useEffect(() => {
     if (tracks.length === 0) {
