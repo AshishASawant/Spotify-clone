@@ -22,3 +22,9 @@
     font-weight: 600;
     font-size: large;
 }
+@media only screen and(max-width:400px){
+    .login-container img{
+        width: 25rem;
+        height: 8rem;
+    }
+}
