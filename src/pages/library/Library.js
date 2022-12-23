@@ -17,6 +17,11 @@ const Library = () => {
    apiClient.get('me/playlists').then(({data})=>{
     setPlayList(data.items)
     setLoading(false)
+   }).catch((err)=>{
+    if(err.response.status===401){
+      alert('Your Access token has expired. Please signout and login again')
+    }
+    setLoading(false)
    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -31,7 +36,7 @@ const Library = () => {
       {loading?<Loading/>:
       <div className="playlist-container">
         {playList.map((item)=>{
-         return (<Displaycard id={item.id} img={item?.images[0]?.url} title={item.name} subtitle={item.tracks?.total} click={()=>openPlaylist(item.id)} / >)
+         return (<Displaycard key={item.id} id={item.id} img={item?.images[0]?.url} title={item.name} subtitle={item.tracks?.total} click={()=>openPlaylist(item.id)} / >)
          
         })}
       </div>}

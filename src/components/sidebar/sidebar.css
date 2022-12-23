@@ -5,12 +5,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 .user-image{
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
-    background-image: url('https://xsgames.co/randomusers/avatar.php?g=male');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,3 +47,73 @@ a{
     padding: 0;
     padding-top: .2rem;
 }
+
+@media only screen and (max-width:1000px) {
+    .sidebar{
+        padding: 5px;
+        height: 11%;
+        width: 100%;
+        flex-direction: row;
+        align-items: center ;
+    }
+    .nav-btns{
+        height: 110%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin: 0;
+    }
+    .btn-body{
+        width: 5.5rem;
+    }
+    .user-image{
+        height: 90%;
+        width: 5.5rem;
+        margin: 0;
+    }
+    .active{
+        color: white;
+        background-color: rgba(244, 187, 146, 1);
+        transform: scale(1);
+    }
+    .btn-text{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+  }
+  @media only screen and (max-width:650px) {
+    .sidebar{
+        height: 8%;
+        width: 95%;
+        margin: auto;
+    }
+    .btn-text{
+        font-size: .9rem;
+    }
+    .btn-body{
+        margin: 0;
+    }
+    .nav-btns{
+        height: 118%
+    }
+    .res-btn{
+        height: 60%;
+    }
+    .user-image{
+        width: 35px;
+    }
+  }
+  @media only screen and (max-width:450px) {
+   
+    .btn-text{
+        display: none;
+    }
+   .res-btn{
+    height: 75%;
+   }
+    .user-image{
+        display: none;
+    }
+  }

@@ -24,3 +24,22 @@
 .play-pause-btn.active {
     box-shadow: inset -4px -4px 10px #ff8769, inset 4px 4px 10px 1px #753d30;
   }
+
+@media only screen and (max-width:1000px) {
+   .play-pause{
+    width: 55px;
+    height: 55px;
+   }
+   .control-container{
+    margin-top: 10px;
+   }
+}
+@media only screen and (max-width:450px) {
+   .play-pause{
+    width: 55px;
+    height: 55px;
+   }
+   .control-container{
+    margin-top: 10px;
+   }
+}

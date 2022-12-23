@@ -67,3 +67,34 @@
     width: 100%;
     height: 85%;
 }
+@media only screen and (max-width:1000px) {
+  .widget-name{
+    font-size: 12px;
+  }
+  .widget-subname{
+    font-size: 10px;
+  }
+  .widget-text{
+    width: 60%;
+  }
+    
+}
+@media only screen and (max-width:650px) {
+  .widget-title{
+    font-size: 16px;
+  }
+  .widget-name{
+    font-size: 10px;
+  }
+  .widget-subname{
+    font-size: 8px;
+  }
+  .widget-img{
+    height: 80%;
+  }
+}
+@media only screen and (max-width:450px) {
+ .widget-card{
+    display: none;
+ }
+}

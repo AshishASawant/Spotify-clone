@@ -11,7 +11,7 @@
 .playlist-card{
     position: relative;
     width: 22%;
-    height: 55%;
+    height: fit-content;
     border: 2px solid rgb(42 42 42 / 10%);
     background: linear-gradient(
         75deg,
@@ -61,4 +61,10 @@
 }
 .playlist-card:hover .play-logo{
     opacity: 1;
+}
+
+@media only screen and (max-width:450px){
+    .playlist-card{
+        width: 44%;
+    }
 }

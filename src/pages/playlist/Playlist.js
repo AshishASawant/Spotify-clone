@@ -21,7 +21,12 @@ const [tplayList, setTplayList] = useState([])
     .then(({ data }) =>{
      setTplayList(data.playlists.items)
      setLoading(false)
-    });
+    }).catch((err)=>{
+      if(err.response.status){
+        alert('Your Access token has expired. Please signout and login again')
+      }
+      setLoading(false)
+     })
     }, [lib])
   
    

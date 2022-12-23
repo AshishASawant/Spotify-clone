@@ -27,7 +27,13 @@ const Player = () => {
       .get(`playlists/${location.state?.id}/tracks`)
       .then(({ data }) => {
         setTracks(data.items);
-      })
+      }).catch((err)=>{
+        if(err.response.status===401){
+          alert('Your Access token has expired. Please signout and login again')
+          console.log(err)
+        }
+        setLoading(false)
+       })
     setLoading(false);
      // eslint-disable-next-line
   }, [location.state]);

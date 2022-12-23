@@ -30,7 +30,7 @@ const Sidebar = () => {
           }`}
         >
           <Link to="/categorie">
-            <MdDashboard size={28} />
+            <MdDashboard size={28} className='res-btn'/>
             <p className="btn-text">Categories</p>
           </Link>
         </div>
@@ -40,7 +40,7 @@ const Sidebar = () => {
           }`}
         >
           <Link to="/playlist">
-            <RiPlayList2Fill size={28} />
+            <RiPlayList2Fill size={28} className='res-btn'/>
             <p className="btn-text">Playlist</p>
           </Link>
         </div>
@@ -50,7 +50,7 @@ const Sidebar = () => {
           }`}
         >
           <Link to="/player">
-            <FaPlay size={28} />
+            <FaPlay size={28} className='res-btn'/>
             <p className="btn-text">Player</p>
           </Link>
         </div>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           }`}
         >
           <Link to="/search">
-            <FaSearch size={28} />
+            <FaSearch size={28} className='res-btn'/>
             <p className="btn-text">Search</p>
           </Link>
         </div>
@@ -70,7 +70,7 @@ const Sidebar = () => {
           }`}
         >
           <Link to="/library">
-            <MdLibraryMusic size={28} />
+            <MdLibraryMusic size={28} className='res-btn'/>
             <p className="btn-text">Library</p>
           </Link>
         </div>
@@ -87,7 +87,7 @@ const Sidebar = () => {
             location.reload()
           }}
         >
-          <FiLogOut size={28} />
+          <FiLogOut size={28}  className='res-btn'/>
           <p className="btn-text">Signout</p>
         </Link>
       </div>

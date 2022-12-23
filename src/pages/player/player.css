@@ -141,3 +141,61 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+@media only screen and (max-width:1000px) {
+    .album-title{
+        font-size: 18px;
+    }
+    .album-subtitle{
+        margin-top: 0;
+    }
+    .album-release{
+        font-size: 12px;
+    }
+    .album-card{
+        height: 56%;
+    }
+    .queue-container{
+        height: 43%;
+    }
+    .queue-dt{
+        font-size:12px ;
+    }
+}
+@media only screen and (max-width:650px) {
+    .album-card{
+        height: 50%;
+    }
+    .queue-container{
+        height: 48%;
+    }
+    .album-title{
+        font-size: 16px;
+    }
+    .album-subtitle{
+        margin-top: 0;
+    }
+    .album-release{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:450px) {
+    .album-card{
+        display: none;
+    } 
+    .right-container{
+        height: 40%;
+       width: 100%;
+    }
+    .queue-container{
+        height: 100%;
+        width: 100%;
+    }
+    .left-container{
+        width: 100%;
+        margin: 0;
+    }
+    .player-container{
+        flex-direction: column;
+    }
+}
