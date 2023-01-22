@@ -35,6 +35,7 @@ code {
 .mainscreen{
   width: 100%;
   height: 100%;
+  position: relative;
   border-radius: 3rem;
   background-color: #1e2a3e;
   background-image: repeating-radial-gradient(
@@ -55,7 +56,7 @@ font-family: 'Nunito', sans-serif;
     flex-direction: column-reverse;
   }
   .mainscreen{
-    height: 89%;
+    flex: 1;
     background-image: repeating-radial-gradient(
       circle at center bottom,
       transparent 0,

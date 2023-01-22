@@ -3,9 +3,13 @@
     margin-bottom: 0;
     margin-top: 10px;
     margin-left: 12px;
+    align-self: flex-start;
 }
 .input-field{
-    width: 40%;
+    position: sticky;
+    top:3px;
+    z-index: 2;
+    width: 60%;
     padding: .5%;
     font-weight: 400;
     background-color: rgba(16, 15, 15, 0.5);
@@ -17,7 +21,7 @@
     justify-self: center;
     text-align: center;
     color: aliceblue;
-    margin: 0px 30%;
+    font-weight: 900;
 }
 
 .res-container{
@@ -30,8 +34,20 @@
     margin-top: 0;
 }
 .search-container{
-    overflow:scroll;
     width:100%;
-    height: 100%;
+    height: 100vh;
     padding: 8px 1% ;
+    padding-bottom: 110px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+@media only screen and (max-width:1000px) {
+    .search-container{
+        padding: 60px 0px ;
+    }
+ 
 }

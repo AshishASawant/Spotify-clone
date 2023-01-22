@@ -5,6 +5,7 @@ import {  useNavigate } from 'react-router-dom'
 import musicContext from '../../state/musicContext'
 import Displaycard from '../../components/displaycard/Displaycard'
 import Loading from '../../components/loading/Loading'
+import Bottomcontroller from '../../components/bottomcontroller/Bottomcontroller'
 
 
 const Library = () => {
@@ -40,6 +41,7 @@ const Library = () => {
          
         })}
       </div>}
+      <Bottomcontroller/>
     </div>
   )
 }

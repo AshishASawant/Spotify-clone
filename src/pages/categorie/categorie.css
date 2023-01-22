@@ -1,4 +1,4 @@
-.playlist-container{
+/* .categorie-container{
     height: 100%;
     width: 100%;
     display: flex;
@@ -7,4 +7,5 @@
     flex-wrap: wrap;
     overflow: auto;
     padding: 1rem 0rem;
-}
+    padding-bottom: 110px;
+} */

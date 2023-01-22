@@ -5,6 +5,7 @@ import {  useNavigate } from 'react-router-dom'
 import musicContext from '../../state/musicContext'
 import Displaycard from '../../components/displaycard/Displaycard'
 import Loading from '../../components/loading/Loading'
+import Bottomcontroller from '../../components/bottomcontroller/Bottomcontroller'
 
 
 const Playlist = () => {
@@ -44,6 +45,7 @@ const [tplayList, setTplayList] = useState([])
          return (<Displaycard key={item.id} id={item.id} img={item?.images[0]?.url} title={item.name} subtitle={item.tracks?.total} click={()=>getPlaylist(item.id)} / >)
         })}
       </div>}
+      <Bottomcontroller/>
     </div>
   )
 }

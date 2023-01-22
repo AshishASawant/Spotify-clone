@@ -6,7 +6,9 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    z-index: 3;
 }
+
 .user-image{
     height: 7rem;
     width: 7rem;
@@ -51,13 +53,13 @@ a{
 @media only screen and (max-width:1000px) {
     .sidebar{
         padding: 5px;
-        height: 11%;
+        height: 80px;
         width: 100%;
         flex-direction: row;
         align-items: center ;
     }
     .nav-btns{
-        height: 110%;
+        height: 100%;
         width: 100%;
         display: flex;
         align-items: center;
@@ -66,11 +68,15 @@ a{
         margin: 0;
     }
     .btn-body{
-        width: 5.5rem;
+        width: 7.2rem;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .user-image{
-        height: 90%;
-        width: 7.5rem;
+        height: 5rem;
+        width: 6rem;
         margin: 0;
     }
     .active{
@@ -79,31 +85,33 @@ a{
         transform: scale(1);
     }
     .btn-text{
-        font-size: 1.2rem;
-        padding: 0;
+        font-size: 1.2rem;   
     }
   }
   @media only screen and (max-width:650px) {
     .sidebar{
-        height: 8%;
-        width: 95%;
+        width: 100%;
         margin: auto;
+        height: 49px;
     }
     .btn-text{
         font-size: .9rem;
+        display: none;
     }
     .btn-body{
         margin: 0;
+        width: 4rem;
+        height: 4rem;
     }
     .nav-btns{
-        height: 118%
+        height: 82%;
     }
     .res-btn{
         height: 60%;
     }
     .user-image{
-        width: 55px;
-        height: 55px;
+        width: 60px;
+        height: 45px;
     }
   }
   @media only screen and (max-width:450px) {
@@ -116,5 +124,12 @@ a{
    }
     .user-image{
         display: none;
+    }
+  }
+  @media only screen and (max-width:375px) {
+     .active{
+        color: rgb(255, 255, 255);
+        background-color: rgba(244, 187, 146, 0);
+
     }
   }

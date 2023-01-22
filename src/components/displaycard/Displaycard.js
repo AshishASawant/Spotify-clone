@@ -3,7 +3,8 @@ import './displaycard.css'
 import {BsFillPlayCircleFill} from 'react-icons/bs'
 
 
-const Displaycard = ({id,title,subtitle,img,click}) => {
+const Displaycard = ({title,subtitle,img,click}) => {
+  // console.log(title,subtitle,img,click)
   return (
       
         <div className="playlist-card" >

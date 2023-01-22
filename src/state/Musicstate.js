@@ -5,12 +5,14 @@ import musicContext from "./musicContext";
 
 const Musicstate = (props) => {
   const [playList, setPlayList] = useState([]);
-  const [loading, setLoading] = useState(false)
-  const navigate=useNavigate()
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const [lib, setLib] = useState({});
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [shuffle, setShuffle] = useState(false);
+  const [repeat, setRepeat] = useState(false);
   const [audio] = useState(new Audio());
   const [isPlaying, setIsPlaying] = useState(false);
   const { duration } = audio;
@@ -20,7 +22,7 @@ const Musicstate = (props) => {
   useEffect(() => {
     if (tracks.length === 0) {
     }
-    audio.src = tracks[0]?.track?.preview_url ;
+    audio.src = tracks[0]?.track?.preview_url;
     setCurrentTrack(tracks[0]?.track);
     setCurrentIndex(0);
     if (isPlaying) {
@@ -33,7 +35,9 @@ const Musicstate = (props) => {
 
   // this useeffect changes the audio state when the currentindex changes
   useEffect(() => {
+    audio.pause()
     audio.src = tracks[currentIndex]?.track.preview_url;
+    audio.play()
     if (isPlaying) {
       audio.play();
     } else {
@@ -56,14 +60,14 @@ const Musicstate = (props) => {
     apiClient.get(`browse/categories`).then(({ data }) => {
       setcategories(data.categories.items);
       setLib(data.categories.items[0].id);
-      apiClient.get(`browse/categories/${data.categories.items[0].id}/playlists`).then(({ data }) => {
-        navigate('/player',{state:{'id':data.playlists.items[0].id}})
-      });
+      apiClient
+        .get(`browse/categories/${data.categories.items[0].id}/playlists`)
+        .then(({ data }) => {
+          navigate("/player", { state: { id: data.playlists.items[0].id } });
+        });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-
 
   setInterval(() => {
     setTrackProgress(audio.currentTime);
@@ -72,26 +76,47 @@ const Musicstate = (props) => {
   const currentPercentage = duration ? (trackProgress / duration) * 100 : 0;
 
   audio.addEventListener("ended", () => {
-    if(tracks.length===1){
-      setIsPlaying(false)
+    if (tracks.length === 1) {
+      setIsPlaying(false);
     }
     handleNext();
   });
 
   const handleNext = () => {
-    if (currentIndex < tracks.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setIsPlaying(true);
-      setTrackProgress(0);
-    } else {
-      setCurrentIndex(0);
+    if (repeat) {
+      setCurrentIndex(currentIndex)
+      audio.currentTime = 0;
+      audio.play(); 
+    } 
+    else if (shuffle) {
+      const newIndex=Math.floor(Math.random() * (tracks.length - 1 - 0 + 1) + 0)
+      setCurrentIndex(newIndex);
+    } 
+    else {
+      if (currentIndex < tracks.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        setCurrentIndex(0);
+      }       
     }
   };
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+    if (repeat) {
+      setCurrentIndex(currentIndex)
+      audio.currentTime = 0;
+      audio.play();
+    } else if (shuffle) {
+      audio.pause();
+      setCurrentIndex(
+        Math.floor(Math.random() * (tracks.length - 1 - 0 + 1) + 0)
+      );
+      audio.play();
     } else {
-      setCurrentIndex(tracks.length - 1);
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      } else {
+        setCurrentIndex(tracks.length - 1);
+      }
     }
   };
 
@@ -114,11 +139,16 @@ const Musicstate = (props) => {
         setTrackProgress,
         trackProgress,
         currentPercentage,
+        shuffle,
+        repeat,
         lib,
+        setShuffle,
+        setRepeat,
         setLib,
         categories,
         setcategories,
-        loading,setLoading
+        loading,
+        setLoading,
       }}
     >
       {props.children}

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import musicContext from '../../state/musicContext'
 import Displaycard from '../../components/displaycard/Displaycard'
 import Loading from '../../components/loading/Loading'
+import Bottomcontroller from '../../components/bottomcontroller/Bottomcontroller'
 
 const Categorie = () => {
   const context=useContext(musicContext)
@@ -25,6 +26,7 @@ const Categorie = () => {
         return(<Displaycard key={item.id} id={item.id} title={item.name} img={item?.icons[0]?.url } subtitle={item.tracks?.total} click={()=>newCategorie(item.id)} / >) 
         })}
       </div>}
+        <Bottomcontroller/>
     </div>
   )
 }
