@@ -10,10 +10,12 @@ import {
 } from "react-icons/io5";
 import { RxShuffle } from "react-icons/rx";
 const Bottomcontroller = () => {
+  const [details, setDetails] = useState({
+    title: "",
+    subtitle: "",
+    imgUrl: "",
+  });
 
-    
-    const [details, setDetails] = useState({title:"",subtitle:"",imgUrl:""})
-    
   const context = useContext(musicContext);
   const {
     isPlaying,
@@ -29,11 +31,16 @@ const Bottomcontroller = () => {
     setShuffle,
     setRepeat,
   } = context;
-  
+
   useEffect(() => {
-   setDetails({title:tracks[currentIndex]?.track?.name,subtitle:tracks[currentIndex]?.track?.artists[0]?.name,imgUrl:tracks[currentIndex]?.track?.album?.images[0].url})
-  }, [currentIndex])
-  
+    setDetails({
+      title: tracks[currentIndex]?.track?.name,
+      subtitle: tracks[currentIndex]?.track?.artists[0]?.name,
+      imgUrl: tracks[currentIndex]?.track?.album?.images[0].url,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
   const addZero = (n) => {
     return n > 9 ? "" + n : "0" + n;
   };
@@ -45,7 +52,7 @@ const Bottomcontroller = () => {
   return (
     <div className="bottom-controller">
       <div className="disc-container">
-        <div className={!isPlaying?"disc":"disc animate"}>
+        <div className={!isPlaying ? "disc" : "disc animate"}>
           <img src={details.imgUrl} alt="artist" />
         </div>
         <div className="disc-info">
@@ -69,9 +76,23 @@ const Bottomcontroller = () => {
           <p className="music-duration">00:30</p>
         </div>
         <div className="bcontroll-container">
-          <RxShuffle size={31}  className={shuffle?"high-light res-btn  pointer shuffle-special shuffle-repeat":"res-btn nres-btn pointer shuffle-special shuffle-repeat"}  onClick={()=>{setShuffle(!shuffle)
-            setRepeat(false)}} />
-          <IoPlaySkipBack size={30} className="res-btn  pointer" onClick={handlePrev} />
+          <RxShuffle
+            size={31}
+            className={
+              shuffle
+                ? "high-light res-btn  pointer shuffle-special shuffle-repeat"
+                : "res-btn nres-btn pointer shuffle-special shuffle-repeat"
+            }
+            onClick={() => {
+              setShuffle(!shuffle);
+              setRepeat(false);
+            }}
+          />
+          <IoPlaySkipBack
+            size={30}
+            className="res-btn  pointer"
+            onClick={handlePrev}
+          />
           <div className="">
             {isPlaying ? (
               <FaPause
@@ -92,8 +113,18 @@ const Bottomcontroller = () => {
             className="res-btn  pointer"
             onClick={handleNext}
           />
-          <IoRepeatOutline size={30} className={repeat?"high-light res-btn  pointer shuffle-repeat":"res-btn  pointer shuffle-repeat"} onClick={()=>{setRepeat(!repeat)
-          setShuffle(false)}} />
+          <IoRepeatOutline
+            size={30}
+            className={
+              repeat
+                ? "high-light res-btn  pointer shuffle-repeat"
+                : "res-btn  pointer shuffle-repeat"
+            }
+            onClick={() => {
+              setRepeat(!repeat);
+              setShuffle(false);
+            }}
+          />
         </div>
       </div>
       <div className="volume-container"></div>
