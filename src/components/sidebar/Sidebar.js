@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, {  useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
 import { MdDashboard, MdLibraryMusic } from "react-icons/md";
@@ -6,10 +6,15 @@ import { RiPlayList2Fill } from "react-icons/ri";
 import { FaPlay,FaSearch } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import apiClient from "../../spotify";
+import musicContext from "../../state/musicContext";
 
 
-const Sidebar = () => {
+const Sidebar = ({setToken}) => {
   const location = useLocation();
+
+  let context =useContext(musicContext)
+  let {audio}=context
+
   useEffect(() => {
     apiClient.get("me").then(({ data }) => {
       if (data.images.length) {
@@ -81,10 +86,12 @@ const Sidebar = () => {
         }`}
       >
         <Link
-          to="/login"
-          onClick={() => {
+          to="/"
+          onClick={(e) => {
+            e.preventDefault()
+            audio.pause()
+            setToken("")
             localStorage.removeItem("token");
-            location.reload()
           }}
         >
           <FiLogOut size={28}  className='res-btn'/>

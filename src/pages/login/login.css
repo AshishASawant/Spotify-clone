@@ -22,6 +22,16 @@
     font-weight: 600;
     font-size: large;
 }
+.credentials{
+    margin:0 1rem 5rem 1rem;
+    text-align: center;
+}
+.login-heading{
+    font-size: 3rem;
+}
+.login-title, .login-subtitle{
+    font-size: 1.5rem;
+}
 
 @media only screen and (max-width:403px){
     .login-container img{

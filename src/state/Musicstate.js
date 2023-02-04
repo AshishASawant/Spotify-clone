@@ -19,6 +19,7 @@ const Musicstate = (props) => {
   const [trackProgress, setTrackProgress] = useState(0);
   const [categories, setcategories] = useState([]);
 
+  
   useEffect(() => {
     if (tracks.length === 0) {
     }
@@ -61,7 +62,7 @@ const Musicstate = (props) => {
       setcategories(data.categories.items);
       setLib(data.categories.items[0].id);
       apiClient
-        .get(`browse/categories/${data.categories.items[0].id}/playlists`)
+        .get(`browse/categories/${data.categories.items[1].id}/playlists`)
         .then(({ data }) => {
           navigate("/player", { state: { id: data.playlists.items[0].id } });
         });
@@ -119,7 +120,13 @@ const Musicstate = (props) => {
       }
     }
   };
-
+  document.body.onkeyup = function(e) {
+    if (e.key === " " ||
+        e.code === "Space"
+    ) {
+      isPlaying?setIsPlaying(false):setIsPlaying(true)
+    }
+  }
   return (
     <musicContext.Provider
       value={{

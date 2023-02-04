@@ -1,4 +1,4 @@
-.bottom-controller{
+.bottom-controller {
     width: 100%;
     height: 90px;
     /* background-color: rgba(255, 255, 255, 0.5); */
@@ -11,30 +11,40 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    background: rgba(57, 125, 206, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
 }
-.shuffle-special{
+
+.shuffle-special {
     padding: 4px;
 }
-.seek-container{
+
+.seek-container {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-right: 15px;
 }
-.seek-bar{
+
+.seek-bar {
     width: 70%;
-    margin:0px 10px;
+    margin: 0px 10px;
     cursor: pointer;
     /* transition: all 1s linear; */
 }
-.seek-bar::-webkit-slider-thumb{
+
+.seek-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     opacity: 0;
 
 }
-.all-container{
+
+.all-container {
     display: flex;
     height: 100%;
     width: 60%;
@@ -43,7 +53,8 @@
     flex-direction: column;
 
 }
-.disc-container{
+
+.disc-container {
     height: 80px;
     width: 30%;
     margin-left: 10px;
@@ -53,7 +64,8 @@
     margin-right: 25px;
     text-transform: capitalize;
 }
-.disc-info{
+
+.disc-info {
     flex: 1;
     overflow: hidden;
     white-space: nowrap;
@@ -64,40 +76,45 @@
     flex-direction: column;
     padding-left: 8px;
 }
-.disc-info p{
+
+.disc-info p {
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.disc-title{
-   font-weight: 900;
-   font-size: 25px;
+.disc-title {
+    font-weight: 900;
+    font-size: 25px;
 }
-.disc-subtitle{
-   font-weight: 500;
-   font-size: 15px;
+
+.disc-subtitle {
+    font-weight: 500;
+    font-size: 15px;
 }
-.disc{
+
+.disc {
     height: 75px;
-    background-image:url("https://www.go.ooo/img/bg-img/Login.jpg");
+    background-image: url("https://www.go.ooo/img/bg-img/Login.jpg");
     width: 75px;
     border-radius: 50%;
-    animation: rotate 20s linear  infinite ;
+    animation: rotate 20s linear infinite;
     animation-play-state: paused;
     overflow: hidden;
 }
-.disc img{
+
+.disc img {
     height: inherit;
 }
 
-.bcontroll-container{
+.bcontroll-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
     flex-direction: row;
 }
-.bplay-pause{
+
+.bplay-pause {
     width: 50px;
     height: 50px;
     padding: 0;
@@ -105,11 +122,12 @@
     padding: 8px;
     text-align: center;
 }
-.music-duration{
+
+.music-duration {
     font-size: large;
 }
 
-.high-light{
+.high-light {
     border-radius: 50%;
     color: black;
     background-color: antiquewhite;
@@ -117,100 +135,118 @@
 
 
 @keyframes rotate {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
-.animate{
+
+.animate {
     animation-play-state: running;
 }
 
-@media only screen and (max-width:1000px){
-    .seek-bar{
+@media only screen and (max-width:1000px) {
+    .seek-bar {
         width: 300px;
     }
-    .bottom-controller{
+
+    .bottom-controller {
         border-radius: 0px;
     }
 }
 
-@media only screen and (max-width:650px){
-    .seek-bar{
+@media only screen and (max-width:650px) {
+    .seek-bar {
         width: 250px;
     }
-    .bottom-controller{
+
+    .bottom-controller {
         height: 65px;
     }
-    .disc-container{
+
+    .disc-container {
         height: 55px;
     }
-    .disc{
+
+    .disc {
         height: 55px;
         width: 55px;
     }
-    .disc-title{
+
+    .disc-title {
         font-size: large;
     }
-    .disc-subtitle{
+
+    .disc-subtitle {
         font-size: small;
     }
-    .nres-btn{
+
+    .nres-btn {
         padding: 5px;
     }
-    .new-pbtn{
+
+    .new-pbtn {
         height: 40px;
         width: 40px;
     }
-    .music-duration{
+
+    .music-duration {
         font-size: small;
     }
 }
-@media only screen and (max-width:523px){
-    .seek-bar{
+
+@media only screen and (max-width:523px) {
+    .seek-bar {
         width: 200px;
     }
-   
-    .disc-container{
+
+    .disc-container {
         height: 35px;
     }
-    .disc{
+
+    .disc {
         height: 40px;
         width: 40px;
     }
-    .disc-title{
+
+    .disc-title {
         font-size: small;
     }
-    .disc-subtitle{
+
+    .disc-subtitle {
         font-size: smaller;
     }
-   
-    .new-pbtn{
+
+    .new-pbtn {
         height: 30px;
         width: 30px;
     }
-    .music-duration{
+
+    .music-duration {
         font-size: smaller;
     }
-    .shuffle-special{
+
+    .shuffle-special {
         padding: 3px;
     }
+
     input[type="range"] {
         height: 5px;
     }
-    .high-light{
+
+    .high-light {
         border-radius: 50%;
         color: black;
         background-color: antiquewhite;
         aspect-ratio: 1;
     }
 }
-@media only screen and (max-width:340px){
-    .disc-container{
+
+@media only screen and (max-width:340px) {
+    .disc-container {
         margin-right: 15px;
     }
 }
-
-

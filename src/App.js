@@ -30,7 +30,7 @@ const App = () => {
 
   return token ? (
     <div className="app">
-      <Sidebar />
+      <Sidebar setToken={setToken}/>
       <Routes>
         <Route exact path="/" element={<Navigate to="/player" />}></Route>
         <Route exact path="/player" element={<Player />}></Route>

@@ -27,7 +27,7 @@ code {
 }
 .app{
   width: 100vw;
-  height: 100vh;
+  height: 99.8vh;
   border-radius: 3rem;
   background-color:#e99d72;;
   display: flex;
@@ -56,7 +56,7 @@ font-family: 'Nunito', sans-serif;
     flex-direction: column-reverse;
   }
   .mainscreen{
-    flex: 1;
+    height: calc(100% - 80px);
     background-image: repeating-radial-gradient(
       circle at center bottom,
       transparent 0,
