@@ -143,6 +143,9 @@
 }
 
 @media only screen and (max-width:1000px) {
+    .right-container{
+        width: 35%;
+    }
     .album-title{
         font-size: 18px;
     }
@@ -162,7 +165,7 @@
         font-size:12px ;
     }
 }
-@media only screen and (max-width:650px) {
+@media only screen and (max-width:740px) {
     .album-card{
         height: 50%;
     }
@@ -179,7 +182,7 @@
         font-size: 10px;
     }
 }
-@media only screen and (max-width:450px) {
+@media only screen and (max-width:580px) {
     .album-card{
         display: none;
     } 

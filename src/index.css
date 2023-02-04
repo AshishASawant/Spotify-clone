@@ -64,3 +64,11 @@ font-family: 'Nunito', sans-serif;
     ),    repeating-linear-gradient(#1e2a3e55, #1e2a3e);
   }
 }
+
+@media only screen and (max-width:1000px) {
+
+  .mainscreen{
+    height: calc(100% - 58px);
+    
+  }
+}

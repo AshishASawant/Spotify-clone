@@ -17,9 +17,10 @@
         padding-bottom: 100px;
     }
 }
-@media only screen and (max-width:445px){
+@media only screen and (max-width:580px){
     .playlist-container{
-        padding: 80px 0px;
+        padding-top: 20px;
+        padding-bottom: 80px;
       
     } 
 }

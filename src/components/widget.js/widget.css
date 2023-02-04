@@ -24,7 +24,15 @@
     height: 40%;
   }
 }
-@media only screen and (max-width:450px){
+@media only screen and (max-width:740px){
+  .widget-card:nth-child(3){
+    display: none;
+  }
+  .widget-card{
+    width: 45%;
+  }
+}
+@media only screen and (max-width:580px){
   .widget-container{
     display: none;
   }

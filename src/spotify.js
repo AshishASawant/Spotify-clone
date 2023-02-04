@@ -1,8 +1,8 @@
 import axios from 'axios'
-// const client_id = process.env.REACT_APP_CLIENT_ID; // client id ---hosted app 
-// const redirect_uri = 'https://tseries.netlify.app'; //  redirect uri ---hosted app
-const client_id = process.env.REACT_APP_CLIENT_ID2; // client id ---devlopment app 
-const redirect_uri = 'http://localhost:3000'; //  redirect uri ---development app
+const client_id = process.env.REACT_APP_CLIENT_ID; // client id ---hosted app 
+const redirect_uri = 'https://tseries.netlify.app'; //  redirect uri ---hosted app
+// const client_id = process.env.REACT_APP_CLIENT_ID2; // client id ---devlopment app 
+// const redirect_uri = 'http://localhost:3000'; //  redirect uri ---development app
 const authEndpoint='https://accounts.spotify.com/authorize?'
 const scopes=['user-library-read','playlist-read-private']
 

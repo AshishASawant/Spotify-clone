@@ -6,12 +6,9 @@
     justify-content: center;
     flex-direction: column;
     background-color: black;
+    gap: 2rem;
 }
-.login-container img{
-    height: 12rem;
-    width: 40rem;
-    margin-bottom: 5rem;
-}
+
 .btn{
     height: 5rem;
     width: 15rem;
@@ -23,14 +20,29 @@
     font-size: large;
 }
 .credentials{
-    margin:0 1rem 5rem 1rem;
+    margin:0 1rem 2rem 1rem;
     text-align: center;
 }
 .login-heading{
     font-size: 3rem;
+    font-weight: 900;
 }
 .login-title, .login-subtitle{
     font-size: 1.5rem;
+    font-weight: 600;
+}
+.imgdiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.img-title{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.imgdiv>img{
+    width: 17rem;
+    height: 17rem;
 }
 
 @media only screen and (max-width:403px){

@@ -27,7 +27,6 @@ const Search = () => {
           window.location.reload()
         }
       })
-      console.log(sSong)
   };
 
   const navigate = useNavigate();
@@ -46,7 +45,8 @@ const Search = () => {
           placeholder='Search'
           autoFocus
         />
-      
+        <div className="search-res-container">
+          <div className="change-flow">
           {sSong.length>0 && <p className="info-text">Songs</p>}
           <div className="res-container">
           {sSong?.map((item) => {
@@ -63,6 +63,8 @@ const Search = () => {
               );
             })}
             </div>
+            </div>
+            <div className="change-flow">
             {artist.length>0 && <p className="info-text">Artists</p>}
         <div className="res-container">
           {artist?.map((item) => {
@@ -86,6 +88,8 @@ const Search = () => {
               />
             );
           })}
+          </div>
+          </div>
         </div>
       </div>
       <Bottomcontroller/>
